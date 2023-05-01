@@ -27,6 +27,11 @@ namespace Splav2.ViewModels
         {
             get=>_stop;
             set => SetProperty(ref _stop, value);
+        } private string _pbVisibility = "Hidden";
+        public string PbVisibility 
+        {
+            get=> _pbVisibility;
+            set => SetProperty(ref _pbVisibility, value);
         }
         public ICommand StartCommand { get; }
         public ICommand StopCommand { get; }
@@ -57,6 +62,7 @@ namespace Splav2.ViewModels
                 try
                 {
                     Stop = true;
+                    PbVisibility = "Visible";
                     string processName = $"\"C:\\Windows\\py.exe {scriptpath} {dbpath}\"";
                     proc = Process.Start("cmd", $"/c {processName}");
                     await proc.WaitForExitAsync(source.Token);
@@ -74,9 +80,11 @@ namespace Splav2.ViewModels
             }
             else MessageBox.Show("Отсутствует путь к бд или скрипту!!!");
             Stop = false;
+            PbVisibility = "Hidden";
         }
         private void StopExamination()
         {
+            PbVisibility = "Hidden";
             source?.Cancel();
         }
         private bool CanStop() => Stop;
