@@ -15,7 +15,7 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Width="100" HorizontalAlignment="Left" Content="Отобразить текст python скрипта" Command="{Binding PrintCommand}" Style="{StaticResource ButtonStyle}"/>
+            <Button Grid.Row="0" Width="130" HorizontalAlignment="Left" Content="Отобразить текст python скрипта" Command="{Binding PrintCommand}" Style="{StaticResource ButtonStyle}"/>
 
             <ScrollViewer Grid.Row="1">
                 <Border BorderBrush = "White" BorderThickness="2" >

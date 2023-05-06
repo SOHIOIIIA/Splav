@@ -15,7 +15,7 @@
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
-                <Label Foreground="White" Content="Путь к созданой модели" FontFamily="Segoe Print" FontSize="14" Style="{StaticResource LabelStyle}"/>
+                <Label Foreground="White" Content="Путь к созданой модели" FontSize="14" Style="{StaticResource LabelStyle}"/>
                 <TextBlock Text="{Binding OutputPath}" Foreground="White" TextWrapping="Wrap" />
                 <ProgressBar Height="26" Width="326" Visibility="{Binding PbVisibility}" IsIndeterminate="True" />
             </StackPanel>
